@@ -20,7 +20,7 @@ print("MSE: {}, standardDeviation: {}".format(MSE["value"], MSE["standardDeviati
 print("RMSE: {}, standardDeviation: {}".format(RMSE["value"], RMSE["standardDeviation"]))
 
 fig = plt.figure()
-F = [Adaline.predict(w, np.append(-1, x)) for x in X]
+F = w[1]*X - w[0]
 plt.plot(X, Y, "r.", X, F, "k")
 plt.title("f(x) = {:.3f}*x + {:.3f}".format(w[1], -w[0]))
 plt.xlabel("x")
