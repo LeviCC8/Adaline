@@ -11,8 +11,9 @@ def g(x1, x0):
 X = np.random.rand(100, 2)
 Y = [g(x[1], x[0]) + uniform(-0.1, 0.1) for x in X] 
 
-g = Adaline(X, Y)
-w = g.solution(realizations = 20, epochs = 100, learningRate = 0.1)
+g = Adaline(realizations = 20, epochs = 100, learningRate = 0.1)
+g.fit(X, Y)
+w = g.w
 MSE = g.MSE
 RMSE = g.RMSE
 

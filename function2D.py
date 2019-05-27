@@ -10,8 +10,9 @@ def f(x):
 X = np.random.rand(100, 1)
 Y = [f(x) + uniform(-0.1, 0.1) for x in X] 
 
-f = Adaline(X, Y)
-w = f.solution(realizations = 20, epochs = 100, learningRate = 0.1)
+f = Adaline(realizations = 20, epochs = 100, learningRate = 0.1)
+f.fit(X, Y)
+w = f.w
 MSE = f.MSE
 RMSE = f.RMSE
 
